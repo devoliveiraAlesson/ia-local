@@ -9,6 +9,7 @@ Estudo e proposta para implantação de modelos de IA rodando localmente (on-pre
 - [x] **03 — Exemplos reais** (34 empresas, 5 stacks arquetípicas, lições)
 - [x] **04 — Infraestrutura** (dimensionamento P/M/G, CAPEX, decisões executivas)
 - [x] **05 — ROI e proposta consolidada** (10 documentos boardroom-ready)
+- [x] **06 — MCP + Claude Code** (8 docs, RAG/Graph como tool nativa, segurança e roadmap)
 
 ---
 
@@ -118,6 +119,19 @@ Para perguntas executivas (Q&A boardroom):
 | [`05-roi-e-proposta/08-decisao-go-no-go.md`](./05-roi-e-proposta/08-decisao-go-no-go.md) | Checklist consolidado de decisão | Sponsor / comitê |
 | [`05-roi-e-proposta/09-anexo-fontes.md`](./05-roi-e-proposta/09-anexo-fontes.md) | Bibliografia consolidada de todas as etapas | Auditoria / due diligence |
 
+### Etapa 6 — MCP + Claude Code
+
+| Doc | Conteúdo |
+|-----|----------|
+| [`06-mcp-claude-code/00-resumo-executivo.md`](./06-mcp-claude-code/00-resumo-executivo.md) | Por que MCP, mensagem-chave, conexão com Etapas 1–5 |
+| [`06-mcp-claude-code/01-mcp-fundamentos.md`](./06-mcp-claude-code/01-mcp-fundamentos.md) | Protocolo, transportes (stdio/HTTP), escopos, SDKs |
+| [`06-mcp-claude-code/02-rag-via-mcp.md`](./06-mcp-claude-code/02-rag-via-mcp.md) | RAG corporativo (Caso 3) exposto como tool MCP com rerank |
+| [`06-mcp-claude-code/03-graph-rag-via-mcp.md`](./06-mcp-claude-code/03-graph-rag-via-mcp.md) | Graph RAG (Neo4j, Kuzu) via MCP — quando estrutura > texto |
+| [`06-mcp-claude-code/04-servidores-mcp-prontos.md`](./06-mcp-claude-code/04-servidores-mcp-prontos.md) | Catálogo curado (RAG, vector stores, knowledge graph, dev tooling) |
+| [`06-mcp-claude-code/05-construir-mcp-interno.md`](./06-mcp-claude-code/05-construir-mcp-interno.md) | Adapter próprio (FastMCP / TypeScript) sobre APIs internas |
+| [`06-mcp-claude-code/06-seguranca-governanca.md`](./06-mcp-claude-code/06-seguranca-governanca.md) | OWASP LLM Top 10 × MCP, OAuth 2.1, OPA, DLP, allowlist |
+| [`06-mcp-claude-code/07-roadmap-adocao.md`](./06-mcp-claude-code/07-roadmap-adocao.md) | Fases 0–3, KPIs, orçamento incremental |
+
 ---
 
 ## Estrutura de pastas
@@ -129,6 +143,7 @@ Para perguntas executivas (Q&A boardroom):
 | `03-exemplos-reais/` | 34 casos reais de empresas (financeiro, saúde, indústria, varejo, SaaS, governo) + lições aprendidas. |
 | `04-infraestrutura/` | Hardware, dimensionamento, rede, storage, orquestração, segurança, energia, checklist. |
 | `05-roi-e-proposta/` | ROI por cenário, comparação com alternativas, riscos, roadmap, narrativa boardroom, FAQ, decisão. |
+| `06-mcp-claude-code/` | MCP como camada de tool-calling: RAG/Graph como serviço nativo do agente, servidor MCP corporativo, segurança, roadmap. |
 
 ---
 
