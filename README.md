@@ -10,6 +10,7 @@ Estudo e proposta para implantação de modelos de IA rodando localmente (on-pre
 - [x] **04 — Infraestrutura** (dimensionamento P/M/G, CAPEX, decisões executivas)
 - [x] **05 — ROI e proposta consolidada** (10 documentos boardroom-ready)
 - [x] **06 — MCP + Claude Code** (8 docs, RAG/Graph como tool nativa, segurança e roadmap)
+- [x] **07 — Design System para Apresentações** (6 docs, tokens DTCG, Google Slides MCP, wizard guiado)
 
 ---
 
@@ -132,6 +133,18 @@ Para perguntas executivas (Q&A boardroom):
 | [`06-mcp-claude-code/06-seguranca-governanca.md`](./06-mcp-claude-code/06-seguranca-governanca.md) | OWASP LLM Top 10 × MCP, OAuth 2.1, OPA, DLP, allowlist |
 | [`06-mcp-claude-code/07-roadmap-adocao.md`](./06-mcp-claude-code/07-roadmap-adocao.md) | Fases 0–3, KPIs, orçamento incremental |
 
+### Etapa 7 — Design System para Apresentações (Google Slides + MCP)
+
+| Doc | Conteúdo | Audiência |
+|-----|----------|-----------|
+| [`07-design-system-apresentacoes/00-resumo-executivo.md`](./07-design-system-apresentacoes/00-resumo-executivo.md) | Viabilidade, decisões executivas, conexão com Etapas 3 e 6 | Tech Lead / Liderança |
+| [`07-design-system-apresentacoes/01-arquitetura-e-fundamentos.md`](./07-design-system-apresentacoes/01-arquitetura-e-fundamentos.md) | Stack completa: tokens → templates → skills → wizard → Drive | Arquiteto / Tech Lead |
+| [`07-design-system-apresentacoes/02-design-tokens-pptx.md`](./07-design-system-apresentacoes/02-design-tokens-pptx.md) | Formato DTCG 2025.10, estrutura de tokens, mapeamento para Slides API e python-pptx | Designer / Eng plataforma |
+| [`07-design-system-apresentacoes/03-mcp-google-drive-slides.md`](./07-design-system-apresentacoes/03-mcp-google-drive-slides.md) | Catálogo de servidores MCP (Google oficial + community), fluxo de criação, autenticação | Eng de plataforma |
+| [`07-design-system-apresentacoes/04-wizard-guiado.md`](./07-design-system-apresentacoes/04-wizard-guiado.md) | Roteiro de 5 etapas do wizard, skills de slides, outline JSON, integração RAG | Eng de software |
+| [`07-design-system-apresentacoes/05-construir-servidor-mcp.md`](./07-design-system-apresentacoes/05-construir-servidor-mcp.md) | Build completo do servidor FastMCP: wizard, tokens, Drive client, Slides client, deploy | Eng de software |
+| [`07-design-system-apresentacoes/06-roadmap-adocao.md`](./07-design-system-apresentacoes/06-roadmap-adocao.md) | Fases 0–3, gates de aprovação, métricas, integrações avançadas (RAG, PDF→slides, Jira) | PMO / Tech Lead |
+
 ---
 
 ## Estrutura de pastas
@@ -144,6 +157,7 @@ Para perguntas executivas (Q&A boardroom):
 | `04-infraestrutura/` | Hardware, dimensionamento, rede, storage, orquestração, segurança, energia, checklist. |
 | `05-roi-e-proposta/` | ROI por cenário, comparação com alternativas, riscos, roadmap, narrativa boardroom, FAQ, decisão. |
 | `06-mcp-claude-code/` | MCP como camada de tool-calling: RAG/Graph como serviço nativo do agente, servidor MCP corporativo, segurança, roadmap. |
+| `07-design-system-apresentacoes/` | Design system para Google Slides/PPTX: tokens DTCG, templates no Drive, servidor MCP com wizard guiado, skills de slides, roadmap de adoção. |
 
 ---
 
