@@ -12,6 +12,12 @@ Estudo e proposta para implantação de modelos de IA rodando localmente (on-pre
 - [x] **06 — MCP + Claude Code** (8 docs, RAG/Graph como tool nativa, segurança e roadmap)
 - [x] **07 — Design System para Apresentações** (6 docs, tokens DTCG, Google Slides MCP, wizard guiado)
 
+**Trilha de capacitação — nova função (Comercial × Marketing × Dados):**
+
+- [x] **08 — RevOps** (8 docs: fundamentos, papel, métricas, stack, processos, roadmap 90 dias, referências)
+- [x] **09 — Marketing Mix Model** (7 docs: fundamentos, estatística, implementação, decisão, caso aplicado, roadmap)
+- [x] **10 — Startup Enxuta / Lean Startup** (6 docs: fundamentos, build-measure-learn, métricas, aplicação, roadmap)
+
 ---
 
 ## Como ler esta proposta
@@ -147,6 +153,48 @@ Para perguntas executivas (Q&A boardroom):
 
 ---
 
+## Trilha de capacitação — RevOps, MMM e Lean Startup
+
+> Dossiês para a função de pivot entre Comercial e Marketing (perfil cientista de dados + publicitário). Os três temas se conectam de propósito: **Lean Startup é o método** (hipótese → experimento → aprendizado validado), **RevOps é a operação de receita orientada a dados**, e o **Marketing Mix Model é uma das máquinas de decisão de investimento**. Recomendo ler na ordem 10 → 08 → 09, ou começar pelo resumo executivo de cada um.
+
+### Etapa 8 — RevOps (Revenue Operations)
+
+| Doc | Conteúdo |
+|-----|----------|
+| [`08-revops/00-resumo-executivo.md`](./08-revops/00-resumo-executivo.md) | O que é RevOps, por que existe, conexão com seu perfil de dados + publicidade |
+| [`08-revops/01-fundamentos-revops.md`](./08-revops/01-fundamentos-revops.md) | Definição, origem, silos Mkt/Vendas/CS, modelo bowtie, RevOps vs SalesOps vs MktOps |
+| [`08-revops/02-papel-e-responsabilidades.md`](./08-revops/02-papel-e-responsabilidades.md) | Responsabilidades, maturidade e seção "onde seu perfil de cientista de dados entra" |
+| [`08-revops/03-metricas-e-kpis.md`](./08-revops/03-metricas-e-kpis.md) | Métricas por estágio do funil, fórmulas e benchmarks (CAC, LTV, NRR, win rate, forecast) |
+| [`08-revops/04-stack-ferramentas.md`](./08-revops/04-stack-ferramentas.md) | CRM, automação, BI, revenue intelligence; comparativo + nota Brasil (RD Station) |
+| [`08-revops/05-processos-e-frameworks.md`](./08-revops/05-processos-e-frameworks.md) | Lead lifecycle, SLAs MQL→SQL, forecasting, cadência RevOps, governança de dados |
+| [`08-revops/06-roadmap-90-dias.md`](./08-revops/06-roadmap-90-dias.md) | Plano 30/60/90, primeiros entregáveis que provam valor, armadilhas comuns |
+| [`08-revops/07-referencias-e-aprendizado.md`](./08-revops/07-referencias-e-aprendizado.md) | Livros, comunidades, certificações e bibliografia consolidada |
+
+### Etapa 9 — Marketing Mix Model (MMM)
+
+| Doc | Conteúdo |
+|-----|----------|
+| [`09-marketing-mix-model/00-resumo-executivo.md`](./09-marketing-mix-model/00-resumo-executivo.md) | O que é MMM, renascimento (cookieless/LGPD), conexão com seu perfil |
+| [`09-marketing-mix-model/01-fundamentos-mmm.md`](./09-marketing-mix-model/01-fundamentos-mmm.md) | Definição, história, base vs incremental, MMM vs MTA vs testes de incrementalidade |
+| [`09-marketing-mix-model/02-metodologia-estatistica.md`](./09-marketing-mix-model/02-metodologia-estatistica.md) | Regressão, adstock, saturação (Hill), ridge, abordagem Bayesiana, calibração |
+| [`09-marketing-mix-model/03-implementacao-pratica.md`](./09-marketing-mix-model/03-implementacao-pratica.md) | Dados necessários, Meridian/Robyn/PyMC-Marketing, workflow e código |
+| [`09-marketing-mix-model/04-interpretacao-e-decisao.md`](./09-marketing-mix-model/04-interpretacao-e-decisao.md) | Decomposição, ROI/ROAS, curvas de resposta, otimização de budget, validação |
+| [`09-marketing-mix-model/05-caso-aplicado.md`](./09-marketing-mix-model/05-caso-aplicado.md) | Caso aplicado à sua realidade: canais, dados, hipóteses, primeiro entregável |
+| [`09-marketing-mix-model/06-roadmap-e-referencias.md`](./09-marketing-mix-model/06-roadmap-e-referencias.md) | Plano faseado (crawl/walk/run), maturidade, armadilhas, bibliografia |
+
+### Etapa 10 — Startup Enxuta (Lean Startup)
+
+| Doc | Conteúdo |
+|-----|----------|
+| [`10-startup-enxuta/00-resumo-executivo.md`](./10-startup-enxuta/00-resumo-executivo.md) | Lean Startup afiado para quem já conhece o básico, por que cabe no seu cenário, conexão 08+09 |
+| [`10-startup-enxuta/01-fundamentos-lean-startup.md`](./10-startup-enxuta/01-fundamentos-lean-startup.md) | Linhagem (Ries/Blank/Toyota/Agile), 5 princípios, aprendizado validado, intraempreendedorismo |
+| [`10-startup-enxuta/02-build-measure-learn.md`](./10-startup-enxuta/02-build-measure-learn.md) | Loop construir-medir-aprender, hipóteses, MVP, catálogo de pivôs |
+| [`10-startup-enxuta/03-metricas-experimentacao.md`](./10-startup-enxuta/03-metricas-experimentacao.md) | Contabilidade da inovação, métricas de vaidade vs acionáveis, coorte, A/B, rigor estatístico |
+| [`10-startup-enxuta/04-aplicacao-comercial-marketing-revops.md`](./10-startup-enxuta/04-aplicacao-comercial-marketing-revops.md) | Ponte: experimentos em RevOps/marketing/comercial + template de experimento reutilizável |
+| [`10-startup-enxuta/05-roadmap-e-referencias.md`](./10-startup-enxuta/05-roadmap-e-referencias.md) | Plano 90 dias, maturidade, armadilhas, trilha de leitura (Ries, Maurya, Lean Analytics) |
+
+---
+
 ## Estrutura de pastas
 
 | Pasta | Conteúdo |
@@ -158,6 +206,9 @@ Para perguntas executivas (Q&A boardroom):
 | `05-roi-e-proposta/` | ROI por cenário, comparação com alternativas, riscos, roadmap, narrativa boardroom, FAQ, decisão. |
 | `06-mcp-claude-code/` | MCP como camada de tool-calling: RAG/Graph como serviço nativo do agente, servidor MCP corporativo, segurança, roadmap. |
 | `07-design-system-apresentacoes/` | Design system para Google Slides/PPTX: tokens DTCG, templates no Drive, servidor MCP com wizard guiado, skills de slides, roadmap de adoção. |
+| `08-revops/` | Revenue Operations: fundamentos, papel e responsabilidades, métricas/KPIs, stack de ferramentas, processos, roadmap 90 dias e referências. |
+| `09-marketing-mix-model/` | Marketing Mix Model: fundamentos, metodologia estatística (adstock, saturação, Bayesiano), implementação (Meridian/Robyn/PyMC), decisão e caso aplicado. |
+| `10-startup-enxuta/` | Lean Startup aplicado: build-measure-learn, métricas acionáveis vs vaidade, experimentação em RevOps/marketing/comercial, roadmap e referências. |
 
 ---
 
