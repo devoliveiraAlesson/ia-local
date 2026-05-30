@@ -17,6 +17,7 @@ Estudo e proposta para implantação de modelos de IA rodando localmente (on-pre
 - [x] **08 — RevOps** (8 docs: fundamentos, papel, métricas, stack, processos, roadmap 90 dias, referências)
 - [x] **09 — Marketing Mix Model** (7 docs: fundamentos, estatística, implementação, decisão, caso aplicado, roadmap)
 - [x] **10 — Startup Enxuta / Lean Startup** (6 docs: fundamentos, build-measure-learn, métricas, aplicação, roadmap)
+- [x] **11 — RevOps aplicado (gestora UHNW)** (5 docs: diagnóstico aplicado ao caso real — modelo de receita por AUM, maturidade/gaps, árvore de métricas, instrumento de medição)
 
 ---
 
@@ -193,6 +194,18 @@ Para perguntas executivas (Q&A boardroom):
 | [`10-startup-enxuta/04-aplicacao-comercial-marketing-revops.md`](./10-startup-enxuta/04-aplicacao-comercial-marketing-revops.md) | Ponte: experimentos em RevOps/marketing/comercial + template de experimento reutilizável |
 | [`10-startup-enxuta/05-roadmap-e-referencias.md`](./10-startup-enxuta/05-roadmap-e-referencias.md) | Plano 90 dias, maturidade, armadilhas, trilha de leitura (Ries, Maurya, Lean Analytics) |
 
+### Etapa 11 — RevOps aplicado (gestora UHNW)
+
+> Aplicação das Etapas 8–10 a um caso real: **gestora de investimentos e patrimônio para clientes ultra ricos (liquidez R$ 10 M+)**, vendas consultivas, funil Marketing → SDR → Executivo. Trabalho em duas fases — esta etapa entrega a **Fase 1 (diagnóstico)**; a Fase 2 (plano de execução e acompanhamento) é construída sobre os números reais que o diagnóstico instrumenta.
+
+| Doc | Conteúdo |
+|-----|----------|
+| [`11-revops-aplicado/00-resumo-executivo.md`](./11-revops-aplicado/00-resumo-executivo.md) | Tese, por que RevOps UHNW ≠ RevOps SaaS, as 5 hipóteses de gargalo, plano das duas fases |
+| [`11-revops-aplicado/01-contexto-e-modelo-de-negocio.md`](./11-revops-aplicado/01-contexto-e-modelo-de-negocio.md) | Modelo de receita por AUM, funil reescrito para UHNW (com o handoff SDR→Executivo), marketing UHNW |
+| [`11-revops-aplicado/02-diagnostico-maturidade-e-gaps.md`](./11-revops-aplicado/02-diagnostico-maturidade-e-gaps.md) | Avaliação dos 4 pilares (pessoas/processo/tecnologia/dados), nível de maturidade, hipóteses de gargalo |
+| [`11-revops-aplicado/03-metricas-do-modelo.md`](./11-revops-aplicado/03-metricas-do-modelo.md) | Árvore de métricas baseada em AUM (net new AUM, share-of-wallet, retenção, CAC por R$ de AUM, atribuição canal→AUM) |
+| [`11-revops-aplicado/04-instrumento-de-diagnostico.md`](./11-revops-aplicado/04-instrumento-de-diagnostico.md) | Instrumento de campo: roteiro de entrevistas, auditoria de higiene do CRM, queries de extração, data request |
+
 ---
 
 ## Estrutura de pastas
@@ -209,6 +222,7 @@ Para perguntas executivas (Q&A boardroom):
 | `08-revops/` | Revenue Operations: fundamentos, papel e responsabilidades, métricas/KPIs, stack de ferramentas, processos, roadmap 90 dias e referências. |
 | `09-marketing-mix-model/` | Marketing Mix Model: fundamentos, metodologia estatística (adstock, saturação, Bayesiano), implementação (Meridian/Robyn/PyMC), decisão e caso aplicado. |
 | `10-startup-enxuta/` | Lean Startup aplicado: build-measure-learn, métricas acionáveis vs vaidade, experimentação em RevOps/marketing/comercial, roadmap e referências. |
+| `11-revops-aplicado/` | RevOps aplicado à gestora UHNW (caso real): diagnóstico em 5 docs — modelo de receita por AUM, funil Mkt→SDR→Executivo, maturidade/gaps, árvore de métricas e instrumento de medição (Fase 1 de duas). |
 
 ---
 
