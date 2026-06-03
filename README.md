@@ -18,6 +18,7 @@ Estudo e proposta para implantação de modelos de IA rodando localmente (on-pre
 - [x] **09 — Marketing Mix Model** (7 docs: fundamentos, estatística, implementação, decisão, caso aplicado, roadmap)
 - [x] **10 — Startup Enxuta / Lean Startup** (6 docs: fundamentos, build-measure-learn, métricas, aplicação, roadmap)
 - [x] **11 — RevOps aplicado (gestora UHNW)** (5 docs: diagnóstico aplicado ao caso real — modelo de receita por AUM, maturidade/gaps, árvore de métricas, instrumento de medição)
+- [x] **12 — Análise semântica (interesse do público × nosso conteúdo)** (6 docs: nuvem de palavras/keyness, embeddings + cosseno, topic modeling, resumo via LLM, workflow e stack — do conceito ao código)
 
 ---
 
@@ -206,6 +207,19 @@ Para perguntas executivas (Q&A boardroom):
 | [`11-revops-aplicado/03-metricas-do-modelo.md`](./11-revops-aplicado/03-metricas-do-modelo.md) | Árvore de métricas baseada em AUM (net new AUM, share-of-wallet, retenção, CAC por R$ de AUM, atribuição canal→AUM) |
 | [`11-revops-aplicado/04-instrumento-de-diagnostico.md`](./11-revops-aplicado/04-instrumento-de-diagnostico.md) | Instrumento de campo: roteiro de entrevistas, auditoria de higiene do CRM, queries de extração, data request |
 
+### Etapa 12 — Análise semântica: interesse do público × nosso conteúdo
+
+> Como medir a "diferença entre assuntos e conteúdos": analisar as publicações/interesse dos leads e comparar com as nossas publicações, do conceito ao código. Responde diretamente ao gargalo "marketing alinhado ao público certo" da Etapa 11 e complementa o MMM (Etapa 9): MMM mede *quanto cada canal moveu AUM*; esta etapa mede *se a mensagem casa com o interesse*.
+
+| Doc | Conteúdo |
+|-----|----------|
+| [`12-analise-semantica-conteudo/00-resumo-executivo.md`](./12-analise-semantica-conteudo/00-resumo-executivo.md) | A pergunta de negócio, a escada de técnicas (palavras → significado → assuntos), avisos de LGPD/volume/limites |
+| [`12-analise-semantica-conteudo/01-escada-de-tecnicas.md`](./12-analise-semantica-conteudo/01-escada-de-tecnicas.md) | Cada técnica explicada e o que NÃO vê: nuvem de palavras, keyness, embeddings, cosseno, BERTopic, resumo via LLM |
+| [`12-analise-semantica-conteudo/02-coleta-e-preparacao.md`](./12-analise-semantica-conteudo/02-coleta-e-preparacao.md) | De onde tirar os textos, ética e LGPD (gate), limpeza e preparação em PT-BR |
+| [`12-analise-semantica-conteudo/03-metodos-e-codigo.md`](./12-analise-semantica-conteudo/03-metodos-e-codigo.md) | Scripts Python comentados: nuvem/keyness, embeddings + cosseno, BERTopic, resumo estruturado em JSON |
+| [`12-analise-semantica-conteudo/04-workflow-aplicado.md`](./12-analise-semantica-conteudo/04-workflow-aplicado.md) | Pipeline ponta a ponta: placar de alinhamento + mapa de gaps de conteúdo, loop com RevOps/MMM |
+| [`12-analise-semantica-conteudo/05-stack-e-roadmap.md`](./12-analise-semantica-conteudo/05-stack-e-roadmap.md) | Local vs. API, modelos de embedding PT-BR (BGE-M3), stack, roadmap crawl/walk/run, armadilhas, referências |
+
 ---
 
 ## Estrutura de pastas
@@ -223,6 +237,7 @@ Para perguntas executivas (Q&A boardroom):
 | `09-marketing-mix-model/` | Marketing Mix Model: fundamentos, metodologia estatística (adstock, saturação, Bayesiano), implementação (Meridian/Robyn/PyMC), decisão e caso aplicado. |
 | `10-startup-enxuta/` | Lean Startup aplicado: build-measure-learn, métricas acionáveis vs vaidade, experimentação em RevOps/marketing/comercial, roadmap e referências. |
 | `11-revops-aplicado/` | RevOps aplicado à gestora UHNW (caso real): diagnóstico em 5 docs — modelo de receita por AUM, funil Mkt→SDR→Executivo, maturidade/gaps, árvore de métricas e instrumento de medição (Fase 1 de duas). |
+| `12-analise-semantica-conteudo/` | Análise semântica do interesse do público × nosso conteúdo: nuvem de palavras/keyness, embeddings + cosseno, topic modeling (BERTopic), resumo via LLM; placar de alinhamento e mapa de gaps de conteúdo, do conceito ao código. |
 
 ---
 
