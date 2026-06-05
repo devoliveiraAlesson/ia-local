@@ -3,7 +3,10 @@ version: '3.8'
 x-chatwoot-env: &chatwoot-env
   RAILS_ENV: production
   SECRET_KEY_BASE: ${SECRET_KEY_BASE}
-  DATABASE_URL: postgresql://chatwoot:${POSTGRES_PASSWORD}@chatwoot_db:5432/chatwoot
+  POSTGRES_HOST: chatwoot_db
+  POSTGRES_USERNAME: chatwoot
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  POSTGRES_DATABASE: chatwoot
   REDIS_URL: redis://chatwoot_redis:6379
   FRONTEND_URL: ${CHATWOOT_URL:-http://localhost:3000}
   DEFAULT_LOCALE: pt_BR
@@ -51,7 +54,7 @@ services:
   # Chatwoot Web (Rails)
   # ─────────────────────────────────────────────
   chatwoot_web:
-    image: chatwoot/chatwoot:latest
+    image: chatwoot/chatwoot:v3.11.0
     restart: unless-stopped
     command: bundle exec rails s -b 0.0.0.0 -p 3000
     ports:
@@ -70,7 +73,7 @@ services:
   # Chatwoot Sidekiq (workers / jobs)
   # ─────────────────────────────────────────────
   chatwoot_sidekiq:
-    image: chatwoot/chatwoot:latest
+    image: chatwoot/chatwoot:v3.11.0
     restart: unless-stopped
     command: bundle exec sidekiq -C config/sidekiq.yml
     environment:
