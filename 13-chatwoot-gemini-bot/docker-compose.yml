@@ -1,0 +1,127 @@
+version: '3.8'
+
+x-chatwoot-env: &chatwoot-env
+  RAILS_ENV: production
+  SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+  DATABASE_URL: postgresql://chatwoot:${POSTGRES_PASSWORD}@chatwoot_db:5432/chatwoot
+  REDIS_URL: redis://chatwoot_redis:6379
+  FRONTEND_URL: ${CHATWOOT_URL:-http://localhost:3000}
+  DEFAULT_LOCALE: pt_BR
+  MAILER_SENDER_EMAIL: ${MAILER_SENDER_EMAIL:-noreply@example.com}
+  SMTP_ADDRESS: ${SMTP_ADDRESS:-}
+  SMTP_USERNAME: ${SMTP_USERNAME:-}
+  SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+  ACTIVE_STORAGE_SERVICE: local
+  RAILS_LOG_TO_STDOUT: "true"
+
+services:
+  # ─────────────────────────────────────────────
+  # Banco de dados do Chatwoot
+  # ─────────────────────────────────────────────
+  chatwoot_db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: chatwoot
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: chatwoot
+    volumes:
+      - chatwoot_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chatwoot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─────────────────────────────────────────────
+  # Cache / filas do Chatwoot
+  # ─────────────────────────────────────────────
+  chatwoot_redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - chatwoot_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─────────────────────────────────────────────
+  # Chatwoot Web (Rails)
+  # ─────────────────────────────────────────────
+  chatwoot_web:
+    image: chatwoot/chatwoot:latest
+    restart: unless-stopped
+    command: bundle exec rails s -b 0.0.0.0 -p 3000
+    ports:
+      - "3000:3000"
+    environment:
+      <<: *chatwoot-env
+    depends_on:
+      chatwoot_db:
+        condition: service_healthy
+      chatwoot_redis:
+        condition: service_healthy
+    volumes:
+      - chatwoot_storage:/app/storage
+
+  # ─────────────────────────────────────────────
+  # Chatwoot Sidekiq (workers / jobs)
+  # ─────────────────────────────────────────────
+  chatwoot_sidekiq:
+    image: chatwoot/chatwoot:latest
+    restart: unless-stopped
+    command: bundle exec sidekiq -C config/sidekiq.yml
+    environment:
+      <<: *chatwoot-env
+    depends_on:
+      - chatwoot_web
+    volumes:
+      - chatwoot_storage:/app/storage
+
+  # ─────────────────────────────────────────────
+  # Qdrant — vector DB para RAG
+  # ─────────────────────────────────────────────
+  qdrant:
+    image: qdrant/qdrant:latest
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  # ─────────────────────────────────────────────
+  # Bot — FastAPI + Gemini
+  # ─────────────────────────────────────────────
+  bot:
+    build: ./bot
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      CHATWOOT_URL: ${CHATWOOT_URL:-http://chatwoot_web:3000}
+      CHATWOOT_API_TOKEN: ${CHATWOOT_API_TOKEN}
+      CHATWOOT_ACCOUNT_ID: ${CHATWOOT_ACCOUNT_ID}
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: 6333
+      BOT_WEBHOOK_SECRET: ${BOT_WEBHOOK_SECRET}
+      BOT_INBOX_ID: ${BOT_INBOX_ID:-}
+    depends_on:
+      - qdrant
+      - chatwoot_web
+    volumes:
+      - ./knowledge-base:/app/knowledge-base:ro
+      - ./bot:/app:rw
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./bot
+          target: /app
+
+volumes:
+  chatwoot_db_data:
+  chatwoot_redis_data:
+  chatwoot_storage:
+  qdrant_data:
